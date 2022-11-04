@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  27 OCT 2022 00:39
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  27 OCT 2022 00:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/washio/Documents/GitHub/scilab_numerical_simulation/tex/scs
-(/Users/washio/Documents/GitHub/scilab_numerical_simulation/tex/scs.tex
+**/Users/washio/Documents/GitHub/scilab_numerical_simulation/tex/scs2
+(/Users/washio/Documents/GitHub/scilab_numerical_simulation/tex/scs2.tex
 pLaTeX2e <2021-11-15> (based on LaTeX2e <2021-11-15> patch level 1)
 L3 programming layer <2022-04-20> (/usr/local/texlive/2022/texmf-dist/tex/latex/plautopatch/plautopatch.sty
 Package: plautopatch 2021/12/07 v0.9q Automated patches for pLaTeX/upLaTeX
@@ -273,8 +273,8 @@ File: l3backend-dvipdfmx.def 2022-04-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count293
 \g__pdf_backend_annotation_int=\count294
 \g__pdf_backend_link_int=\count295
-) (./scs.aux)
-\openout1 = `scs.aux'.
+) (./scs2.aux)
+\openout1 = `scs2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
@@ -377,14 +377,14 @@ File: ../graph/bane-graph.png Graphic file (type bmp)
 *****************************************************
 
 AED: lastpage setting LastPage
-[2] (./scs.aux) ) 
+[2] (./scs2.aux) ) 
 Here is how much of TeX's memory you used:
  5797 strings out of 478692
- 92142 string characters out of 5855915
- 591515 words of memory out of 5000000
+ 92153 string characters out of 5855915
+ 591517 words of memory out of 5000000
  24186 multiletter control sequences out of 15000+600000
  478405 words of font info for 72 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 70i,11n,76p,279b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,11n,76p,280b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on scs.dvi (2 pages, 6652 bytes).
+Output written on scs2.dvi (2 pages, 6652 bytes).
