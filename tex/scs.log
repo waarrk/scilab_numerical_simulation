@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  5 NOV 2022 00:58
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  5 NOV 2022 02:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,37 +377,41 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
  [1
 
 ]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 94.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 94.
+LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 118.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 118.
+LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 118.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 118.
+ [1]
 File: ../graph/bane-model.png Graphic file (type bmp)
 <../graph/bane-model.png>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 107.
+(Font)              scaled to size 8.64899pt on input line 122.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 107.
-LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 116.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 116.
-LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 116.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 116.
- [1]
+(Font)              scaled to size 8.64899pt on input line 122.
 File: ../graph/bane-graph.png Graphic file (type bmp)
 <../graph/bane-graph.png>
- [2]
+ [2] [3]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[3] (./scs.aux) ) 
+[4] (./scs.aux) ) 
 Here is how much of TeX's memory you used:
- 5824 strings out of 478741
- 91378 string characters out of 5862113
+ 5828 strings out of 478741
+ 91430 string characters out of 5862113
  590728 words of memory out of 5000000
- 24164 multiletter control sequences out of 15000+600000
- 484326 words of font info for 97 fonts, out of 8000000 for 9000
+ 24167 multiletter control sequences out of 15000+600000
+ 484912 words of font info for 100 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 70i,13n,76p,280b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,76p,446b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on scs.dvi (4 pages, 9328 bytes).
+Output written on scs.dvi (5 pages, 12476 bytes).
