@@ -60,9 +60,9 @@
 % 班（後期は班に分かれて実験をする．そのときは，ここに班番号を記入する．）
 \team{}
 % 提出日
-\date{2022年10月3日}
+\date{2022年11月11日}
 % 実験日
-\expdate{2022年10月20日}
+\expdate{2022年10月13日,20日,27日}
 % 共同実験者
 % グループに分かれて実験をするテーマでは，グループメンバーの番号名前を書く．
 \coauthor{}
@@ -87,12 +87,29 @@
 
 ここでは，電気系・力学系のシミュレーションモデルをScilab上で構成し，解析結果の有効性確認方法・対象の制御パラメータの調整法を確認する．
 
+\section{環境}
+シミュレーションにはScilabを用いる．本稿上のモデル実行環境は以下の通りである．
+
+\begin{itemize}
+  \item env: Windows 11 Pro 64bit x64 base pro. 21H2 (22000.1908)
+  \item version: Scilab 6.1.1
+\end{itemize}
+
 \section{バネ-マス-ダンパ系のシミュレーション}
 本来数値シミュレーションを必要とするのはより複雑な系の解析であるが，ここでは単純なバネ-マス-ダンパ系のシミュレーションモデルを
 構成し，モデルの構成方法・出力の評価が正しく実施できることを確認する．
 
-天井の固定点からバネ$k$[kg/s$^2$]でダンパ$c$[kg/s]で支持された質量$m$[kg]から
-なる系を考える．質量の運動は上下方向のみとし，重力と空気抵抗の影響は受けないものとする．
+図\ref{fig:spring-mass-damper}に示すように，天井の固定点からバネ$k$[kg/s$^2$]でダンパ$c$[kg/s]で支持された質量$m$[kg]から
+なる系を考える．
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../graph/bane-po.png}
+  \caption{バネ-マス-ダンパ系}
+  \label{fig:spring-mass-damper}
+\end{figure}
+
+質量の運動は上下方向のみとし，重力と空気抵抗の影響は受けないものとする．
 この系に対し，ステップ状の外力$f(t) = f_o \cdot u(t)$ [kg $\cdot$ cm / s$^2$]
 が質量に加わった場合について調べる．
 
@@ -152,29 +169,66 @@ $v(t) = \int \frac{d^2x(t)}{dt^2}$，$x(t) = \int v(t)$であるから，
 \end{figure}
 
 \subsection{シミュレーション結果の解析}
-まず，質量は正のステップ入力に対し，$x(t)$が正の方向に変位し，また，加速により$v(t)$が正となることは間違いない．
-少なくともこの観点には，図2の出力は沿った結果となっている．
+図\ref{fig:bane-graph.png}のシミュレーションの出力である時間応答特性が正しいものであるかどうか評価するため，別の方法で系の解析を行う．
+検討の結果，以下の観点で評価を行うこととした．
+\begin{enumerate}
+  \item 入力に対し，変位の方向は正しいか
+  \item 定常応答は正しいか
+  \item 整定までの時間（立ち上がり時間）は正しいか
+  \item 収束に向かう周波数は正しいか
+\end{enumerate}
 
+当然のことであるが，本来シミュレーションは解析的に評価できないため用いるものであり，シミュレーション結果を手作業で検算することは個人的には
+無意味であると考えている．シミュレーションに用いる運動方程式と手計算に用いる運動方程式は同一であるから，そもそも運動方程式が間違っていればシミュレーション結果の評価も間違うこととなる．
+
+本来的にシミュレーション結果が正しいか確認するためには，実験する，または複数人で同様のシミュレーションを行うことが望ましいと考える．
+今回はシミュレーションの練習であるため，バネマスダンパ系を解析するにあたり有効と思われる上記4つの条件を満たすかどうかを検証することでシミュレーションの評価を行う．
+
+\paragraph{入力に対し，変位の方向は正しいか\\}
+正のステップ入力に対し，質量体は$x(t)$が正の方向に変位し，また，加速により$v(t)$が正となることは間違いない．
+この観点には，図2の出力は沿った結果となっている．
+よって観点1は満たされている．
+
+\paragraph{定常応答は正しいか\\}
 次に，定常応答について評価する．
+この項目は評価しやすく，また，シミュレーション結果が正しいかどうかを判断する上で重要な項目である．
+解析が難しい複雑な系の場合であってもこの観点での確認は有効であると考える．
+
 定常応答は，$t \rightarrow \infty$となったときの$x(t)$及び$v(t)$である．
-質量は最終的に静止するはずであるから，$v(t)$の定常応答は0となるはずである．
-一方，$x(t)$の定常応答は，バネによる弾性力とダンパによる抵抗力のバランスによって決定される．
+質量は最終的に静止するはずであるから，$v(t)$の定常応答は0となる．
+一方，バネの弾性力は，$x(t)$が大きくなるほど大きくなるはずである．
+
+$x(t)$の定常応答は，バネによる弾性力とダンパによる抵抗力のバランスによって決定される．
 $x(t)$の定常応答$x_\infty$は，$x_\infty = \frac{f_o}{k}$とすると，
 $v(t)$が0となればダンパの抵抗力は発生しなくなることを考えれば，$x_\infty = \frac{300}{1460} = 0.205$[cm]となる．
 これら2つの定常応答に対して，図2の出力は沿った結果となっている．
+よって観点2は満たされている．
 
-最終的にシミュレーションモデルの結果が正しいか判断するには，これに加え収束までの時間と，周波数について検討する必要があると考えられる．
-しかし，今回は時間が足りなかったため，これらの検討は行わなかった．
-したがってダンパ成分に対する評価が不十分である．
+\paragraph{整定までの時間（立ち上がり時間）は正しいか\\}
+にゃん！
+\paragraph{収束に向かう周波数は正しいか\\}
+にゃん！！
+
+\paragraph{総評\\}
+4つの観点において，シミュレーションは正しく行われたと評価する．
 
 \section{天井クレーンの制御シミュレーション}
 この章では，天井クレーンのPID制御による安定化シミュレーションについて述べる．
 
 数値シミュレーションによる系の制御の実践として，複数の要素が含まれ解析が難しい天井クレーンの安定化を考える．
 
-図　に天井クレーンの構造を示す．
+図\ref{fig:crane}に天井クレーンの構造を示す．
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../graph/crane.png}
+  \caption{天井クレーンの構造（文献2）}
+  \label{fig:crane}
+\end{figure}
+
+
 高さ方向$y$，横方向$x$，奥行方向$z$の3軸を考えたとき，一般的な天井クレーンは吊り荷の
-移動機構としてそれぞれ巻き上げ機構，トロリ，クレーンガーターを備える．
+移動機構としてそれぞれ巻き上げ機構，トロリ（クラブトロリ），クレーンガーターを備える．
 
 今回のシミュレーションモデルでは，簡略化のため，クレーンガーター，巻き上げ機構は固定とし，トロリの移動のみを考慮する．
 吊り下げる荷重，ロープ長は任意の長さで固定されているものし，
@@ -182,7 +236,14 @@ $v(t)$が0となればダンパの抵抗力は発生しなくなることを考�
 
 このとき，トロリの質量$M$[kg]，吊り荷の質量$m$[kg]，ロープの長さ$l$[m]，
 ロープ根本の粘性係数は$\mu$[kg$\cdot m^2$/s]であるとすると，シミュレーションに用いる天井クレーンは
-図　のようにモデル化できる．
+図\ref{fig:crane-po}のようにモデル化できる．
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../graph/ex-po.png}
+  \caption{天井クレーンのモデル図}
+  \label{fig:crane-po}
+\end{figure}
 
 また，ロープは無視できる質量であるとし，
 トロリの変位$x(t)$は右方向を正，吊り荷の揺れ角$\theta(t)$は反時計回りを正とする．
@@ -269,9 +330,47 @@ $v(t)$が0となればダンパの抵抗力は発生しなくなることを考�
   \frac{d}{dt} \frac{\partial T}{\partial \dot{q}} - \frac{\partial T}{\partial q} + \frac{\partial F}{\partial \dot q} + \frac{\partial U}{\partial \dot q} = 0 \nonumber \\
   m l^2 \theta(t) + m l \dot x cos(\theta(t)) + m l \dot x \dot{\theta(t)}^2 sin(\theta(t)) + \mu \dot{\theta(t)} + mgl sin(\theta(t)) = 0 \nonumber \\
 \end{eqnarray}
+である．
 
 \subsection{シミュレーションパラメータの計算}
-構成したシミュレーションモデルの構造を図　に示す．
+構成したシミュレーションモデルを図\ref{fig:crane:model2}に示す．
+モデルはトロリ，吊り荷をそれぞれ運動方程式より再現し，ブロック化している．
+図\ref{fig:crane:model2}(a)トロリのモデル，(b)に吊り荷のモデルを示す．
+
+\begin{figure}[H]
+  \begin{minipage}{6cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.35]{../graph/ex-model-3.png}
+    \subcaption{トロリのシミュレーションモデル}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{6cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.35]{../graph/ex-model-4.png}
+    \subcaption{吊り荷のシミュレーションモデル}
+  \end{minipage}
+  \caption{天井クレーンシミュレーションモデルの構造}
+  \label{fig:crane:model2}
+\end{figure}
+
+また，モデルの結合構造を図\ref{fig:crane:model1}に示す．
+(b)には吊り荷モデルとトロリモデルの相互関係，(a)には対象系に対する入力と制御が記述されている．
+
+\begin{figure}[H]
+  \begin{minipage}{10cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.35]{../graph/ex-model.png}
+    \subcaption{天井クレーンのシミュレーションモデル}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{6cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.4]{../graph/ex-model-2.png}
+    \subcaption{吊り荷モデルとトロリモデルの関係}
+  \end{minipage}
+  \caption{天井クレーンシミュレーションモデルの構造}
+  \label{fig:crane:model1}
+\end{figure}
 
 モデル上の各シミュレーションパラメータは参考文献[1]の指示に従い決定した．
 実際に使用したパラメータはそれぞれ次のとおりである．
@@ -286,13 +385,14 @@ $v(t)$が0となればダンパの抵抗力は発生しなくなることを考�
 
 \subsection{設計仕様を満たすPID制御器の設計とシミュレーション結果}
 設計したPID制御器について述べる．
-今回のシミュレーションでは，目標位置に向けてトロリの制動速度を制御するPID制御器，吊り荷の揺れ角によってトロリの速度を制御するPID制御器の2つを考える．
+今回のシミュレーションでは，目標位置に向けてトロリの制動速度を制御するPID制御器，
+吊り荷の揺れ角によってトロリの速度を制御するPID制御器の2つを用いる．
 
 前者は，目標位置が近づくにつれてトロリの制動速度を減速させることで，目標位置に到達するまでの時間を効率的に短縮する等の役割を担う．
 後者は，吊り荷の揺れ角が大きくなるにつれてトロリの速度を減速させることで，吊り荷の揺れ角を小さくする等の役割を担う．
 
 両PID制御器の設計仕様は次のとおりである．
-参考資料[1]の内容に加え，項目3に整定条件を追加している．
+参考文献[1]の内容に加え，項目3に整定条件を追加している．
 
 \begin{enumerate}
   \item トロリは目標位置の印加後5[sec]以内で整定し，オーバーシュートを5\%以内とする．
@@ -321,27 +421,31 @@ $v(t)$が0となればダンパの抵抗力は発生しなくなることを考�
   \end{minipage}
   \hfill
   \begin{minipage}{3cm}
-      \begin{center}
-        \begin{tabular}{c|c}
-          \hline
-          $P_1$ & 300\\ \hline
-          $I_1$ & 0\\ \hline
-          $D_1$ & 200\\ \hline
-          $P_2$ & 1150\\ \hline
-          $I_2$ & 1500\\ \hline
-          $D_2$ & 0\\
-          \hline
-        \end{tabular}
-      \end{center}
+    \begin{center}
+      \begin{tabular}{c|c}
+        \hline
+        $P_1$ & 300  \\ \hline
+        $I_1$ & 0    \\ \hline
+        $D_1$ & 200  \\ \hline
+        $P_2$ & 1150 \\ \hline
+        $I_2$ & 1500 \\ \hline
+        $D_2$ & 0    \\
+        \hline
+      \end{tabular}
+    \end{center}
   \end{minipage}
   \hfill
   \caption{同定したパラメータによって制御した場合のクレーンモデルの時間変化}
   \label{fig:crane:fin-up}
 \end{figure}
 
-\paragraph{パラメータ同定における試行過程と方法}
+同制御器は約4[s]で目標位置に到達し，吊り荷の揺れ角は+3[deg]から-6.5[deg]の$\pm 7$[deg]以内となった．
+
+\paragraph{パラメータ同定における試行過程と方法\\}
 上記パラメータを導くにあたって行った試行の方法について述べる．
 まず，パラメータ同定までの過程を示す．
+パラメータ同定は以下のような手順で実施した．
+
 \begin{enumerate}
   \item 全パラメータを0としてシミュレーションを実施
   \item 各PIDパラメータに任意の値を入力し，各パラメータの挙動を観察
@@ -349,6 +453,9 @@ $v(t)$が0となればダンパの抵抗力は発生しなくなることを考�
   \item バランスの良いパラメータを固定し，残りのパラメータを調整
   \item 2つのPID制御器のパラメータを相互に微調整
 \end{enumerate}
+
+全体の方針として，細かな数値変更は避け，5の倍数を中心に使用した．
+詳細なパラメータの変更内容は次のとおりである．
 
 \paragraph{全パラメータを0としてシミュレーションを実施\\}
 図\ref{fig:crane:0}に全パラメータを0とした場合のシミュレーション結果を示す．
@@ -370,12 +477,12 @@ $v(t)$が0となればダンパの抵抗力は発生しなくなることを考�
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 0\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 0\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 0 \\ \hline
+        $I_1$ & 0 \\ \hline
+        $D_1$ & 0 \\ \hline
+        $P_2$ & 0 \\ \hline
+        $I_2$ & 0 \\ \hline
+        $D_2$ & 0 \\
         \hline
       \end{tabular}
     \end{center}
@@ -416,12 +523,12 @@ $P_1$に5を入力し，得た応答を図\ref{fig:crane:1}に示す．
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 5\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 0\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 5 \\ \hline
+        $I_1$ & 0 \\ \hline
+        $D_1$ & 0 \\ \hline
+        $P_2$ & 0 \\ \hline
+        $I_2$ & 0 \\ \hline
+        $D_2$ & 0 \\
         \hline
       \end{tabular}
     \end{center}
@@ -453,12 +560,12 @@ $P_1$に100を入力し得た応答を図\ref{fig:crane:2}に，300を入力し�
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 100\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 0\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 100 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 0   \\ \hline
+        $P_2$ & 0   \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 0   \\
         \hline
       \end{tabular}
     \end{center}
@@ -485,12 +592,12 @@ $P_1$に100を入力し得た応答を図\ref{fig:crane:2}に，300を入力し�
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 0\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 0   \\ \hline
+        $P_2$ & 0   \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 0   \\
         \hline
       \end{tabular}
     \end{center}
@@ -523,12 +630,12 @@ $P_1 = 300$では，収束前の1[s]から2[s]において発振が発生して�
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 0\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 0   \\ \hline
+        $P_2$ & 0   \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 0   \\
         \hline
       \end{tabular}
     \end{center}
@@ -555,12 +662,12 @@ $P_1 = 300$では，収束前の1[s]から2[s]において発振が発生して�
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 100\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 100 \\ \hline
+        $P_2$ & 0   \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 0   \\
         \hline
       \end{tabular}
     \end{center}
@@ -587,12 +694,12 @@ $P_1 = 300$では，収束前の1[s]から2[s]において発振が発生して�
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 100\\ \hline
-        $D_1$ & 100\\ \hline
-        $P_2$ & 0\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 100 \\ \hline
+        $D_1$ & 100 \\ \hline
+        $P_2$ & 0   \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 0   \\
         \hline
       \end{tabular}
     \end{center}
@@ -632,12 +739,12 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 100\\ \hline
-        $P_2$ & 100\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 100 \\ \hline
+        $P_2$ & 100 \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 0   \\
         \hline
       \end{tabular}
     \end{center}
@@ -670,12 +777,12 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 100\\ \hline
-        $P_2$ & 100\\ \hline
-        $I_2$ & 0\\ \hline
-        $D_2$ & 100\\
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 100 \\ \hline
+        $P_2$ & 100 \\ \hline
+        $I_2$ & 0   \\ \hline
+        $D_2$ & 100 \\
         \hline
       \end{tabular}
     \end{center}
@@ -688,7 +795,44 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
 図\ref{fig:crane:8}より，予想に反し$D_2$パラメータはかえって揺れ角を増大させてしまっていることがわかる．
 同様の理由で$I_2$パラメータに100を入力し試行した．
 
-------------
+\begin{figure}[H]
+  \begin{minipage}{4.5cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.35]{../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-100-D2-0.png}
+    \subcaption{吊り荷の揺れ角の時間変化}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{4.5cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.35]{../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-100-D2-0.png}
+    \subcaption{トロリの変位の時間変化}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{3cm}
+    \begin{center}
+      \begin{tabular}{c|c}
+        \hline
+        $P_1$ & 300 \\ \hline
+        $I_1$ & 0   \\ \hline
+        $D_1$ & 100 \\ \hline
+        $P_2$ & 100 \\ \hline
+        $I_2$ & 100 \\ \hline
+        $D_2$ & 0   \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \caption{$I_2$，パラメータに100を追加した場合}
+  \label{fig:crane:9}
+\end{figure}
+
+図\ref{fig:crane:9}より，\ref{fig:crane:7}と比較してトロリの変位収束時の発振が抑制できていることがわかる．
+したがって，$I_2$パラメータが発振の抑制に効果的であることがわかった．
+
+$D_2$パラメータはトロリの時間変化の収束にあたり逆効果となることが判明したため，
+今回のモデルの制御に不適であると判断し，応答波形から今後$P_2 = 1000$，$I_1 = 1000$を基本とし調整していくこととした．
+図\ref{fig:crane:10}に同パラメータでの出力を示す．
 
 \begin{figure}[H]
   \begin{minipage}{4.5cm}
@@ -707,12 +851,12 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 100\\ \hline
-        $P_2$ & 1000\\ \hline
-        $I_2$ & 1000\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300  \\ \hline
+        $I_1$ & 0    \\ \hline
+        $D_1$ & 100  \\ \hline
+        $P_2$ & 1000 \\ \hline
+        $I_2$ & 1000 \\ \hline
+        $D_2$ & 0    \\
         \hline
       \end{tabular}
     \end{center}
@@ -743,12 +887,12 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 100\\ \hline
-        $P_2$ & 1000\\ \hline
-        $I_2$ & 1500\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300  \\ \hline
+        $I_1$ & 0    \\ \hline
+        $D_1$ & 100  \\ \hline
+        $P_2$ & 1000 \\ \hline
+        $I_2$ & 1500 \\ \hline
+        $D_2$ & 0    \\
         \hline
       \end{tabular}
     \end{center}
@@ -762,7 +906,7 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
 前項目の$I_2$にの変更だけではトロリ収束前に発生している波を十分に減少させることはできなかった．
 
 そこで発振を軽減可能な$D_1$パラメータを微調整し，より直線的な運動となる点を検討したところ，$D_1 = 200$にて十分な効果が得られた．
-出力を図\ref{fig:crane:11}に示す．
+出力を図\ref{fig:crane:12}に示す．
 
 \begin{figure}[H]
   \begin{minipage}{4.5cm}
@@ -781,22 +925,22 @@ $P_2 = 100$とした出力を図\ref{fig:crane:7}に示す．
     \begin{center}
       \begin{tabular}{c|c}
         \hline
-        $P_1$ & 300\\ \hline
-        $I_1$ & 0\\ \hline
-        $D_1$ & 200\\ \hline
-        $P_2$ & 1000\\ \hline
-        $I_2$ & 1500\\ \hline
-        $D_2$ & 0\\
+        $P_1$ & 300  \\ \hline
+        $I_1$ & 0    \\ \hline
+        $D_1$ & 200  \\ \hline
+        $P_2$ & 1000 \\ \hline
+        $I_2$ & 1500 \\ \hline
+        $D_2$ & 0    \\
         \hline
       \end{tabular}
     \end{center}
   \end{minipage}
   \hfill
   \caption{$D_1$パラメータを200を変更した場合}
-  \label{fig:crane:11}
+  \label{fig:crane:12}
 \end{figure}
 
-図\ref{fig:crane:11}では，立ち上がり時4[s]から6[s]まで目標値に漸近しているが改善可能と見られる領域が残されている．
+図\ref{fig:crane:12}では，立ち上がり時4[s]から6[s]まで目標値に漸近しているが改善可能と見られる領域が残されている．
 $P_1$パラメータを増加させることで変位の増加を図り，最終パラメータを得た．
 改めて図\ref{fig:crane:final}に示す．
 
@@ -814,18 +958,18 @@ $P_1$パラメータを増加させることで変位の増加を図り，最終
   \end{minipage}
   \hfill
   \begin{minipage}{3cm}
-      \begin{center}
-        \begin{tabular}{c|c}
-          \hline
-          $P_1$ & 300\\ \hline
-          $I_1$ & 0\\ \hline
-          $D_1$ & 200\\ \hline
-          $P_2$ & 1150\\ \hline
-          $I_2$ & 1500\\ \hline
-          $D_2$ & 0\\
-          \hline
-        \end{tabular}
-      \end{center}
+    \begin{center}
+      \begin{tabular}{c|c}
+        \hline
+        $P_1$ & 300  \\ \hline
+        $I_1$ & 0    \\ \hline
+        $D_1$ & 200  \\ \hline
+        $P_2$ & 1150 \\ \hline
+        $I_2$ & 1500 \\ \hline
+        $D_2$ & 0    \\
+        \hline
+      \end{tabular}
+    \end{center}
   \end{minipage}
   \hfill
   \caption{同定したパラメータによって得られた出力}
@@ -848,18 +992,18 @@ $P_1$パラメータを増加させることで変位の増加を図り，最終
   \end{minipage}
   \hfill
   \begin{minipage}{3cm}
-      \begin{center}
-        \begin{tabular}{c|c}
-          \hline
-          $P_1$ & 300\\ \hline
-          $I_1$ & 0\\ \hline
-          $D_1$ & 200\\ \hline
-          $P_2$ & 1150\\ \hline
-          $I_2$ & 1500\\ \hline
-          $D_2$ & 0\\
-          \hline
-        \end{tabular}
-      \end{center}
+    \begin{center}
+      \begin{tabular}{c|c}
+        \hline
+        $P_1$ & 300  \\ \hline
+        $I_1$ & 0    \\ \hline
+        $D_1$ & 200  \\ \hline
+        $P_2$ & 1150 \\ \hline
+        $I_2$ & 1500 \\ \hline
+        $D_2$ & 0    \\
+        \hline
+      \end{tabular}
+    \end{center}
   \end{minipage}
   \hfill
   \caption{6.0[s]での収束部周辺を拡大したグラフ}
@@ -869,13 +1013,23 @@ $P_1$パラメータを増加させることで変位の増加を図り，最終
 図\ref{fig:crane:max}のとおり，収束時には完全に一致しているわけではないことが確認できる．
 一般的に整定条件は2\%または5\%という記述に従い，設定した設計仕様3より，吊り荷の時間変化ほぼ一致，トロリの時間変化0.995[m]より
 この誤差を許容する．
-
 この誤差の大きさをどこまで許容するかについては，モデルを用いるユースケースによって別途検討する必要があると考える．
+また，この差を軽減するため小数点単位でのパラメータ調整を試みたが，コストに対して効果が薄いと判断し最終的にはこのままとした．
 
 \section{感想}
+パラメータ調整では，レポートがかけるような論理的な操作を見つけるためにかなりの時間を要した．
+調整時には名簿番号の近い43番渡辺さんと多くの意見交換を行ったが，自分の同定したパラメータがそのまま渡辺さんのモデルでも仕様でき，
+また渡辺さんが同定したパラメータは自分のものと大きく構造が異なるなど，解答パスはひとつではないことがわかった．
+
+また，レポート作成ではデザインに配慮して作成した．グラフ，グラフ，表を1列に並べる部分は，\TeX のminipage環境を用いて作成し，
+見やすく個人的に良くできた配置であると考えているが，
+表のタイトル，番号を入れるスペースがなくなった．
+今回は「あくまでこれは3つでひとつの図である」と言い張ることにするしているが，卒論に向けて改善を図りたい．
+また，グラフのキャプションが中心ずれを起こしている部分があり，こちらも修正が必要である．
 
 \begin{thebibliography}{99}
   \bibitem{ataka} 佐藤 拓史、実験テキスト「数値シュミレーション」、（2022年）,
+  \bibitem{crane} クレーンの定義と種類、（2022年）, http://www.nrec.sakura.ne.jp/crane\%202.htm　，2022/11/10 accessed
 \end{thebibliography}
 
 \end{document}
