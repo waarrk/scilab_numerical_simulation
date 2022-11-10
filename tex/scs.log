@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  11 NOV 2022 07:04
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  11 NOV 2022 08:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,7 +305,11 @@ File: l3backend-dvipdfmx.def 2022-01-12 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count300
 \g__pdf_backend_annotation_int=\count301
 \g__pdf_backend_link_int=\count302
-) (./scs.aux)
+) (./scs.aux
+
+LaTeX Warning: Label `crane' multiply defined.
+
+)
 \openout1 = `scs.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -432,287 +436,303 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 189.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 189.
+ [4]
+File: ../graph/bane-920.png Graphic file (type bmp)
+<../graph/bane-920.png>
+ [5]
 File: ../graph/crane.png Graphic file (type bmp)
 <../graph/crane.png>
- [4]
+ [6]
 File: ../graph/ex-po.png Graphic file (type bmp)
 <../graph/ex-po.png>
- [5] [6]
+ [7] [8]
 File: ../graph/ex-model-3.png Graphic file (type bmp)
 <../graph/ex-model-3.png>
 
-Overfull \hbox (44.9931pt too wide) in paragraph at lines 344--345
+Overfull \hbox (14.1761pt too wide) in paragraph at lines 426--427
  [][] 
  []
 
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 345.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 427.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 345.
+(Font)              scaled to size 7.68799pt on input line 427.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 345.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 427.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 345.
+(Font)              scaled to size 7.68799pt on input line 427.
 File: ../graph/ex-model-4.png Graphic file (type bmp)
 <../graph/ex-model-4.png>
 
-Overfull \hbox (35.85881pt too wide) in paragraph at lines 350--351
+Overfull \hbox (6.34677pt too wide) in paragraph at lines 432--433
  [][] 
  []
 
 File: ../graph/ex-model.png Graphic file (type bmp)
 <../graph/ex-model.png>
+
+Overfull \hbox (45.65375pt too wide) in paragraph at lines 445--446
+ [][] 
+ []
+
 File: ../graph/ex-model-2.png Graphic file (type bmp)
 <../graph/ex-model-2.png>
-[7]
+
+Overfull \hbox (24.51285pt too wide) in paragraph at lines 451--452
+ [][] 
+ []
+
+[9]
+File: ../graph/pid.png Graphic file (type bmp)
+<../graph/pid.png>
 File: ../graph/crane/ang-fin-up.png Graphic file (type bmp)
 <../graph/crane/ang-fin-up.png>
 
-Overfull \hbox (69.75497pt too wide) in paragraph at lines 414--415
+Overfull \hbox (69.75497pt too wide) in paragraph at lines 504--505
  [][] 
  []
 
 File: ../graph/crane/po-fin-up.png Graphic file (type bmp)
 <../graph/crane/po-fin-up.png>
 
-Overfull \hbox (69.75497pt too wide) in paragraph at lines 420--421
+Overfull \hbox (69.75497pt too wide) in paragraph at lines 510--511
  [][] 
  []
 
-[8]
+[10]
 File: ../graph/crane/ang-0.png Graphic file (type bmp)
 <../graph/crane/ang-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 467--468
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 557--558
  [][] 
  []
 
 File: ../graph/crane/po-0.png Graphic file (type bmp)
 <../graph/crane/po-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 473--474
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 563--564
  [][] 
  []
 
-[9]
+[11]
 File: ../graph/crane/ang-P1-5-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-5-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 513--514
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 603--604
  [][] 
  []
 
 File: ../graph/crane/po-P1-5-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-5-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 519--520
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 609--610
  [][] 
  []
 
 File: ../graph/crane/ang-P1-100-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-100-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 550--551
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 640--641
  [][] 
  []
 
 File: ../graph/crane/po-P1-100-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-100-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 556--557
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 646--647
  [][] 
  []
 
 File: ../graph/crane/ang-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 582--583
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 672--673
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 588--589
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 678--679
  [][] 
  []
 
-[10]
+[12]
 File: ../graph/crane/ang-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 620--621
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 710--711
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 626--627
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 716--717
  [][] 
  []
 
 File: ../graph/crane/ang-P1-300-I1-0-D1-100-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-100-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 652--653
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 742--743
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-100-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-100-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 658--659
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 748--749
  [][] 
  []
 
 File: ../graph/crane/ang-P1-300-I1-100-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-100-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 684--685
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 774--775
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-100-D1-0-P2-0-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-100-D1-0-P2-0-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 690--691
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 780--781
  [][] 
  []
 
-[11]
+[13]
 File: ../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 729--730
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 819--820
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-0-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-0-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 735--736
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 825--826
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-0-D2-100.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-0-D2-100.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 767--768
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 857--858
  [][] 
  []
 
 File: ../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-0-D2-100.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-0-D2-100.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 773--774
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 863--864
  [][] 
  []
 
-[12]
+[14]
 File: ../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-100-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-100-P2-100-I2-100-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 802--803
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 892--893
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-100-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-100-P2-100-I2-100-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 808--809
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 898--899
  [][] 
  []
 
 File: ../graph/crane/ang-P1-300-I1-0-D1-100-P2-1000-I2-1000-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-100-P2-1000-I2-1000-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 841--842
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 931--932
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-100-P2-1000-I2-1000-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-100-P2-1000-I2-1000-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 847--848
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 937--938
  [][] 
  []
 
-[13]
+[15]
 File: ../graph/crane/ang-P1-300-I1-0-D1-100-P2-1000-I2-1500-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-100-P2-1000-I2-1500-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 877--878
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 967--968
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-100-P2-1000-I2-1500-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-100-P2-1000-I2-1500-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 883--884
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 973--974
  [][] 
  []
 
 File: ../graph/crane/ang-P1-300-I1-0-D1-200-P2-1000-I2-1500-D2-0.png Graphic file (type bmp)
 <../graph/crane/ang-P1-300-I1-0-D1-200-P2-1000-I2-1500-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 915--916
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 1005--1006
  [][] 
  []
 
 File: ../graph/crane/po-P1-300-I1-0-D1-200-P2-1000-I2-1500-D2-0.png Graphic file (type bmp)
 <../graph/crane/po-P1-300-I1-0-D1-200-P2-1000-I2-1500-D2-0.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 921--922
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 1011--1012
  [][] 
  []
 
 File: ../graph/crane/ang-final.png Graphic file (type bmp)
 <../graph/crane/ang-final.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 951--952
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 1041--1042
  [][] 
  []
 
 File: ../graph/crane/po-final.png Graphic file (type bmp)
 <../graph/crane/po-final.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 957--958
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 1047--1048
  [][] 
  []
 
 File: ../graph/crane/ang-max.png Graphic file (type bmp)
 <../graph/crane/ang-max.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 985--986
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 1075--1076
  [][] 
  []
 
 File: ../graph/crane/po-max.png Graphic file (type bmp)
 <../graph/crane/po-max.png>
 
-Overfull \hbox (77.13266pt too wide) in paragraph at lines 991--992
+Overfull \hbox (77.13266pt too wide) in paragraph at lines 1081--1082
  [][] 
  []
 
-[14]
+[16]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[15] (./scs.aux)
+[17] (./scs.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7383 strings out of 478741
- 126669 string characters out of 5862113
- 622863 words of memory out of 5000000
- 25671 multiletter control sequences out of 15000+600000
+ 7397 strings out of 478741
+ 126941 string characters out of 5862113
+ 623863 words of memory out of 5000000
+ 25683 multiletter control sequences out of 15000+600000
  486984 words of font info for 110 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  70i,13n,76p,321b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on scs.dvi (16 pages, 56732 bytes).
+Output written on scs.dvi (18 pages, 63060 bytes).
