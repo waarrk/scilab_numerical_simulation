@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  11 NOV 2022 08:53
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2022.2.8)  11 NOV 2022 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -306,6 +306,9 @@ File: l3backend-dvipdfmx.def 2022-01-12 L3 backend support: dvipdfmx
 \g__pdf_backend_annotation_int=\count301
 \g__pdf_backend_link_int=\count302
 ) (./scs.aux
+
+LaTeX Warning: Label `crane' multiply defined.
+
 
 LaTeX Warning: Label `crane' multiply defined.
 
@@ -735,4 +738,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  70i,13n,76p,321b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on scs.dvi (18 pages, 63060 bytes).
+Output written on scs.dvi (18 pages, 63052 bytes).
